@@ -1,4 +1,4 @@
-# Scheme Programs Repository
+# Student Management System (Scheme Program)
 
 This repository contains compiled Scheme programs developed during the prelims to midterms period.
 
