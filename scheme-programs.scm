@@ -1,5 +1,5 @@
 #lang scheme
-(define student-list '())
+
 (define (start)
   (let ((choice '()))
     (display "9487 Group 4 Scheme Projects\n")
