@@ -20,3 +20,5 @@
       ((4) (display "Shutting Down") (exit))
       (else (display "Invalid choice. Please try again.\n")
         (start)))))
+
+(display "Hello World)
