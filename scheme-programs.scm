@@ -21,5 +21,7 @@
       (else (display "Invalid choice. Please try again.\n")
         (start)))))
 
-(display "Hello World")
+(display "Hello World)
+(display "Finals Dice")
 (display "Midterms Hans")
+
