@@ -22,3 +22,4 @@
         (start)))))
 
 (display "Hello World)
+(display "Finals Dice")
