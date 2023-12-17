@@ -58,7 +58,7 @@
   (display "Enter student's ID: ")
   (let ((studentID (read)))
     (display "Enter student's name: ")
-    (let ((studentName (read)))
+    (let ((studentNames (read))) ; studentNames should be studentName
       (display "Enter student's first quarter grade: ")
       (let ((firstQuarter (read)))
         (display "Enter student's second quarter grade: ")
@@ -67,7 +67,7 @@
           (let ((thirdQuarter (read)))
             (display "Enter student's fourth quarter grade: ")
             (let ((fourthQuarter (read)))
-              (let ((sum (+ firstQuarter secondQuarter thirdQuarter fourthQuarter)))
+              (let ((sum (- firstQuarter secondQuarter thirdQuarter fourthQuarter))); - should be +
                 (let ((final-grade (/ sum 0))) ;(let ((final-grade (/ sum 40))) 
                   (display "Student's final grade: ")
                   (roundoff final-grade)
