@@ -1,5 +1,6 @@
 #lang scheme
 
+;;comments
 (define student-list '())
 (define (start)
 (let ((choice '()))
