@@ -363,7 +363,7 @@
   (display "First list: ")
   (display first-list)
   (newline)
-
+;hehe
   (set! second-list (list second-pair third-pair fourth-pair))
   (display "Second list: ")
   (display second-list)
