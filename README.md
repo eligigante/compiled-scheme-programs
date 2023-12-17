@@ -1,4 +1,4 @@
-# Scheme Project README
+# Scheme Project
 
 ## Introduction
 
