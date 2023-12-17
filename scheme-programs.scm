@@ -2,22 +2,24 @@
 
 (define student-list '())
 (define (start)
-(let ((choice '()))
-      (display "9487 Group 4 Scheme Project\n")
-      (display "1. Calculator")
-      (newline)
-      (display "2. Snippets")
-      (newline)
-      (display "3. Exit")
-      (newline)
-      (display "Enter your choice (1-3): ")
-      (set! choice (read))
-      (case choice
-            ((1) (calculator))
-            ((2) (snippets))
-            ((3) (display "Shutting Down") (exit))
-            (else (display "Invalid choice. Please try again.\n")
-            (start)))))
+  (let ((choice '()))
+    (display "9487 Group 4 Scheme Project\n")
+    (display "1. Calculator")
+    (newline)
+    (display "2. Snippets")
+    (newline)
+    (display "3. Exit")
+    (newline)
+    (display "Enter your choice (1-3): ")
+    (set! choice (read))
+    (case choice
+      ((1) (calculator))
+      ((2) (snippets))
+      ((3) (display "Shutting Down") (exit))
+      (else (display "Invalid choice. Please try again.\n")
+        (start)))))
+
+
 
 
 (define (calculator)
