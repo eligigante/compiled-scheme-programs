@@ -35,16 +35,3 @@ The snippets section covers the following topics:
 10. Exit
 
 Choose an option and follow the instructions to explore different Scheme constructs.
-
-## Usage Examples
-
-...
-
-## Code Structure
-
-The code is organized into functions such as `calculate-final-grade`, `gpa-converter`, `display-student-gpa`, etc. The structure facilitates...
-
-## Closing
-
-Thank you for using this Scheme project. If you have any questions or encounter issues, feel free to [provide contact information or support details].
-
