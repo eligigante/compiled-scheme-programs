@@ -55,7 +55,7 @@
   (display "Enter student's ID: ")
   (let ((studentID (read)))
     (display "Enter student's name: ")
-    (let ((studentName (read)))
+    (let ((studentsName (read)))
       (display "Enter student's first quarter grade: ")
       (let ((firstQuarter (read)))
         (display "Enter student's second quarter grade: ")
