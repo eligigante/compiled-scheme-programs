@@ -1,6 +1,5 @@
 #lang scheme
 
-;;comments;comment tit
 (define student-list '())
 (define (start)
 (let ((choice '()))
@@ -29,6 +28,10 @@
 ;     (else (display "Invalid choice. Please try again.\n")
 ;           (start student-list)))))
 
+(display "Bug1")
+
+(display "feaure-1")
+
 (define (calculator)
       (let ((choice '()))
             (display "Northern Luzon School for the Visually Impaired Grade Calculator:\n")
@@ -46,7 +49,7 @@
                   ((1) (calculate-final-grade))
                   ((2) (display-student-gpa))
                   ((3) (display-student-list))
-                  ((4) (display "Shutting Down") (exits))
+                  ((4) (display "Shutting Down") (exit))
                   (else (display "Invalid choice. Please try again.\n")
             (start)))))
 
@@ -55,7 +58,7 @@
   (display "Enter student's ID: ")
   (let ((studentID (read)))
     (display "Enter student's name: ")
-    (let ((studentsName (read)));studentName instead of studentsName
+    (let ((studentName (read)))
       (display "Enter student's first quarter grade: ")
       (let ((firstQuarter (read)))
         (display "Enter student's second quarter grade: ")
@@ -64,7 +67,7 @@
           (let ((thirdQuarter (read)))
             (display "Enter student's fourth quarter grade: ")
             (let ((fourthQuarter (read)))
-              (let ((sum (- firstQuarter secondQuarter thirdQuarter fourthQuarter)));(-) should be (+)
+              (let ((sum (+ firstQuarter secondQuarter thirdQuarter fourthQuarter)))
                 (let ((final-grade (/ sum 0))) ;(let ((final-grade (/ sum 40))) 
                   (display "Student's final grade: ")
                   (roundoff final-grade)
@@ -102,17 +105,7 @@
     (if student
       (caddr student)-1))) ; Extract the final grade from the list
 
-(define (display-student-gpa)
-  (display "Enter student's ID: ")
-  (let ((student-id (read)))
-    (let ((check (student-exists student-id)))
-      (if (> check 0)
-        (let ((gpa (gpa-converter check)))
-          (display "Student's GPA: ")
-          (display gpa))
-        (if (< check 0)
-          (display "Student does not exist.")
-          (display-student-gpa))))))
+
 
 (define (display-list-of-students students)
   (cond
@@ -382,25 +375,7 @@
 
 
 ;;Input using read - addition calculator
-(define (input-sample-calc)
-  (display "Enter 1st number : ")
-  (define val1 (read))
 
-  (cond
-    ((number? val1)
-      (display "Enter 2nd number : ")
-      (define val2 (read))
-
-      (cond
-        ((number? val2)
-          (display (+ val1 val2))
-          (newline))
-        (else
-          (display "Not a number.")
-          (newline))))
-    (else
-      (display "Not a number.")
-      (newline))))
 
 
 ;;File Reading with (read-line)
