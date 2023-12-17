@@ -381,25 +381,7 @@
 
 
 ;;Input using read - addition calculator
-(define (input-sample-calc)
-  (display "Enter 1st number : ")
-  (define val1 (read))
 
-  (cond
-    ((number? val1)
-      (display "Enter 2nd number : ")
-      (define val2 (read))
-
-      (cond
-        ((number? val2)
-          (display (+ val1 val2))
-          (newline))
-        (else
-          (display "Not a number.")
-          (newline))))
-    (else
-      (display "Not a number.")
-      (newline))))
 
 
 ;;File Reading with (read-line)
