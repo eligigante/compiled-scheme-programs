@@ -2,46 +2,52 @@
 
 (define student-list '())
 (define (start)
-  (let ((choice '()))
-    (display "9487 Group 4 Scheme Project\n")
-    (display "1. Calculator")
-    (newline)
-    (display "2. Snippets")
-    (newline)
-    (display "3. Exit")
-    (newline)
-    (display "Enter your choice (1-3): ")
-    (set! choice (read))
-    (case choice
-      ((1) (calculator))
-      ((2) (snippets))
-      ((3) (display "Shutting Down") (exit))
-      (else (display "Invalid choice. Please try again.\n")
-        (start)))))
+(let ((choice '()))
+      (display "9487 Group 4 Scheme Project\n")
+      (display "1. Calculator")
+      (newline)
+      (display "2. Snippets")
+      (newline)
+      (display "3. Exit")
+      (newline)
+      (display "Enter your choice (1-3): ")
+      (set! choice (read))
+      (case choice
+            ((1) (calculator))
+            ((2) (snippets))
+            ((3) (display "Shutting Down") (exit))
+            (else (display "Invalid choice. Please try again.\n")
+            (start)))))
 
-
-
+; (define (start student-list)
+; (let ((choice (get-user-choice)))
+;   (case choice
+;     ((1) (calculator student-list))
+;     ((2) (snippets))
+;     ((3) (display "Shutting Down") (exit))
+;     (else (display "Invalid choice. Please try again.\n")
+;           (start student-list)))))
 
 (define (calculator)
-  (let ((choice '()))
-    (display "Northern Luzon School for the Visually Impaired Grade Calculator:\n")
-    (display "1. Calculate Final Grade")
-    (newline)
-    (display "2. Show Student GPA")
-    (newline)
-    (display "3. Show List of Student's Record")
-    (newline)
-    (display "4. Exit")
-    (newline)
-    (display "Enter your choice (1-4): ")
-    (set! choice (read))
-    (case choice
-      ((1) (calculate-final-grade))
-      ((2) (display-student-gpa))
-      ((3) (display-student-list))
-      ((4) (display "Shutting Down") (exit))
-      (else (display "Invalid choice. Please try again.\n")
-        (start)))))
+      (let ((choice '()))
+            (display "Northern Luzon School for the Visually Impaired Grade Calculator:\n")
+            (display "1. Calculate Final Grade")
+            (newline)
+            (display "2. Show Student GPA")
+            (newline)
+            (display "3. Show List of Student's Record")
+            (newline)
+            (display "4. Exit")
+            (newline)
+            (display "Enter your choice (1-4): ")
+            (set! choice (read))
+            (case choice
+                  ((1) (calculate-final-grade))
+                  ((2) (display-student-gpa))
+                  ((3) (display-student-list))
+                  ((4) (display "Shutting Down") (exit))
+                  (else (display "Invalid choice. Please try again.\n")
+            (start)))))
 
 
 (define (calculate-final-grade)
@@ -58,7 +64,7 @@
             (display "Enter student's fourth quarter grade: ")
             (let ((fourthQuarter (read)))
               (let ((sum (+ firstQuarter secondQuarter thirdQuarter fourthQuarter)))
-                (let ((final-grade (/ sum 4.0)))
+                (let ((final-grade (/ sum 0))) ;(let ((final-grade (/ sum 40))) 
                   (display "Student's final grade: ")
                   (roundoff final-grade)
                   (set! student-list (cons (list studentID studentName final-grade) student-list))
@@ -273,11 +279,11 @@
 ;;and set the loop to act by subtracting the variable check to 1 all over again
 ;;until the value of the check variable becomes 0, and it will display STOP!
 (define (do-loop x)
-  (do ((check x (- check 1)))
+(do ((check x)) ;(do ((check x (- check 1)))
     ((< check 0) (display "STOP!"))
-    (display "TIME: ")
-    (display check)
-    (newline)))
+  (display "TIME: ")
+  (display check)
+  (newline)))
 
 ;;Defines the function tail-recursion, which contains variable x
 ;; and has a cond condition that checks if the time is less than 0, then it will display STOP!
@@ -417,3 +423,9 @@
       (newline))))
 
 (start)
+
+;; Helper function for getting user choice
+; (define (get-user-choice)
+; (display "Enter your choice (1-3): ")
+; (read))
+
