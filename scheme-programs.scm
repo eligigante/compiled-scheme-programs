@@ -101,17 +101,7 @@
     (if student
       (caddr student)-1))) ; Extract the final grade from the list
 
-(define (display-student-gpa)
-  (display "Enter student's ID: ")
-  (let ((student-id (read)))
-    (let ((check (student-exists student-id)))
-      (if (> check 0)
-        (let ((gpa (gpa-converter check)))
-          (display "Student's GPA: ")
-          (display gpa))
-        (if (< check 0)
-          (display "Student does not exist.")
-          (display-student-gpa))))))
+
 
 (define (display-list-of-students students)
   (cond
