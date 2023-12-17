@@ -30,6 +30,8 @@
 
 (display "Bug1")
 
+(display "feaure-1")
+
 (define (calculator)
       (let ((choice '()))
             (display "Northern Luzon School for the Visually Impaired Grade Calculator:\n")
