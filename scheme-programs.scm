@@ -1,6 +1,5 @@
 #lang scheme
 
-;;comments;comment tit
 (define student-list '())
 (define (start)
 (let ((choice '()))
@@ -50,7 +49,7 @@
                   ((1) (calculate-final-grade))
                   ((2) (display-student-gpa))
                   ((3) (display-student-list))
-                  ((4) (display "Shutting Down") (exits))
+                  ((4) (display "Shutting Down") (exit))
                   (else (display "Invalid choice. Please try again.\n")
             (start)))))
 
@@ -59,7 +58,7 @@
   (display "Enter student's ID: ")
   (let ((studentID (read)))
     (display "Enter student's name: ")
-    (let ((studentsName (read)));studentName instead of studentsName
+    (let ((studentName (read)))
       (display "Enter student's first quarter grade: ")
       (let ((firstQuarter (read)))
         (display "Enter student's second quarter grade: ")
@@ -68,7 +67,7 @@
           (let ((thirdQuarter (read)))
             (display "Enter student's fourth quarter grade: ")
             (let ((fourthQuarter (read)))
-              (let ((sum (- firstQuarter secondQuarter thirdQuarter fourthQuarter)));(-) should be (+)
+              (let ((sum (+ firstQuarter secondQuarter thirdQuarter fourthQuarter)))
                 (let ((final-grade (/ sum 0))) ;(let ((final-grade (/ sum 40))) 
                   (display "Student's final grade: ")
                   (roundoff final-grade)
