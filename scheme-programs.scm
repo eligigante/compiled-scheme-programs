@@ -46,7 +46,7 @@
                   ((1) (calculate-final-grade))
                   ((2) (display-student-gpa))
                   ((3) (display-student-list))
-                  ((4) (display "Shutting Down") (exit))
+                  ((4) (display "Shutting Down") (exits))
                   (else (display "Invalid choice. Please try again.\n")
             (start)))))
 
