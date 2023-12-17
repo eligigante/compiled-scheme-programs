@@ -19,6 +19,8 @@
       (else (display "Invalid choice. Please try again.\n")
         (start)))))
 
+(display "feaure-1")
+
 (define (calculator)
   (let ((choice '()))
     (display "Northern Luzon School for the Visually Impaired Grade Calculator:\n")
