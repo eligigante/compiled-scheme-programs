@@ -1,25 +1,50 @@
-# Compiled Programs (Scheme Program)
-
-This repository contains compiled Scheme programs developed during the prelims to midterms period.
-
-## Contents
-
-- [Introduction](#introduction)dddd
-- [Programs](#programs)
+# Scheme Project README
 
 ## Introduction
 
-This repository serves as a collection of compiled Scheme programs written as part of coursework and assignments from prelims to midterms. Scheme is a functional programming language that is often used in academic settings to teach fundamental concepts of computer science.
+This Scheme project is designed for educational purposes and aims to provide a practical understanding of Scheme programming concepts.
 
-## Programs
+## Getting Started
 
-Here is a list of programs included in this repository:
+To run the program, ensure you have a Scheme interpreter installed (i.e., Racket). Run the program and follow the on-screen prompts.
 
-1. **Student Management System:**
-   - Simulates a basic student management system with functions for displaying students, together with their respective grades.
+## Calculator Section
 
-2. *(Include yung other programs)*
+The calculator section offers the following options:
 
-3. *(Include yung other programs)*
+1. Calculate Final Grade
+2. Show Student GPA
+3. Show List of Student's Record
+4. Exit
 
+For each option, follow the on-screen instructions to provide the required input. GPA is calculated based on [explain the GPA calculation logic].
+
+## Snippets Section
+
+The snippets section covers the following topics:
+
+1. Primitive demo
+2. Defining functions demo
+3. Conditional demo
+4. Loop demo
+5. Case demo
+6. Pairs and Lists demo
+7. Input Using read-line
+8. Input using read, addition calculator
+9. File Reading with read-line
+10. Exit
+
+Choose an option and follow the instructions to explore different Scheme constructs.
+
+## Usage Examples
+
+...
+
+## Code Structure
+
+The code is organized into functions such as `calculate-final-grade`, `gpa-converter`, `display-student-gpa`, etc. The structure facilitates...
+
+## Closing
+
+Thank you for using this Scheme project. If you have any questions or encounter issues, feel free to [provide contact information or support details].
 
