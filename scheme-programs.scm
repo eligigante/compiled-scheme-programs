@@ -1,6 +1,6 @@
 #lang scheme
 
-(define student-list '())
+(define studentList '())
 (define (start)
 (let ((choice '()))
       (display "9487 Group 4 Scheme Project\n")
@@ -19,14 +19,14 @@
             (else (display "Invalid choice. Please try again.\n")
             (start)))))
 
-; (define (start student-list)
-; (let ((choice (get-user-choice)))
+; (define (start studentList)
+; (let ((choice (getUserChoice)))
 ;   (case choice
 ;     ((1) (calculator student-list))
 ;     ((2) (snippets))
 ;     ((3) (display "Shutting Down") (exit))
 ;     (else (display "Invalid choice. Please try again.\n")
-;           (start student-list)))))
+;           (start studentList)))))
 
 (define (calculator)
       (let ((choice '()))
@@ -42,15 +42,15 @@
             (display "Enter your choice (1-4): ")
             (set! choice (read))
             (case choice
-                  ((1) (calculate-final-grade))
-                  ((2) (display-student-gpa))
-                  ((3) (display-student-list))
+                  ((1) (calculateFinalGrade))
+                  ((2) (displayStudentGPA))
+                  ((3) (displayStudentList))
                   ((4) (display "Shutting Down") (exit))
                   (else (display "Invalid choice. Please try again.\n")
                   (start)))))
 
 
-(define (calculate-final-grade)
+(define (calculateFinalGrade)
   (display "Enter student's ID: ")
   (let ((studentID (read)))
     (display "Enter student's name: ")
@@ -67,7 +67,7 @@
                 (let ((final-grade (/ sum 0))) ;(let ((final-grade (/ sum 40))) 
                   (display "Student's final grade: ")
                   (roundoff final-grade)
-                  (set! student-list (cons (list studentID studentName final-grade) student-list))
+                  (set! studentList (cons (list studentID studentName final-grade) studentList))
                   (newline))))))))))
 
 (define (roundoff x)
@@ -81,7 +81,7 @@
 (define (range value min max)
       (and (>= value min) (<= value max)))
 
-(define (gpa-converter grade)
+(define (gpaConverter grade)
       (cond
             ((range grade 97 100) "4.0")
             ((range grade 93 96) "4.0")
@@ -96,33 +96,33 @@
             ((range grade 60 66) "1.0")
       (else "0.0")))
 
-(define (student-exists student-id)
-      (let ((student (assoc student-id student-list)))
+(define (studentExists studentID)
+      (let ((student (assoc studentID studentList)))
             (if student
             (caddr student)-1))) ; Extract the final grade from the list
 
-(define (display-student-gpa)
+(define (displayStudentGPA)
       (display "Enter student's ID: ")
-            (let ((student-id (read)))
-            (let ((check (student-exists student-id)))
+            (let ((studentID (read)))
+            (let ((check (studentExists studentID)))
       (if (> check 0)
-            (let ((gpa (gpa-converter check)))
+            (let ((gpa (gpaConverter check)))
             (display "Student's GPA: ")
             (display gpa))
       (if (< check 0)
             (display "Student does not exist.")
-            (display-student-gpa))))))
+            (displayStudentGPA))))))
 
-(define (display-list-of-students students)
+(define (displayListOfStudents students)
       (cond
       ((empty? students))
       (else
       (display-list (car students))
       (newline)
-      (display-list-of-students (cdr students)))))
+      (displayListOfStudents (cdr students)))))
 
-(define (display-student-list)
-      (if (empty? student-list)
+(define (displayStudentList)
+      (if (empty? studentList)
             (display "Empty Student List")
             (begin
             (newline)
@@ -130,7 +130,7 @@
             (display "STUDENT'S RECORDS ")
             (newline)
             (newline)
-            (display-list-of-students student-list))))
+            (displayListOfStudents studentList))))
 
 (define (display-list student)
       (let ((studentID (car student))
@@ -149,7 +149,7 @@
       (newline)
 
       (display "GPA: ")
-      (display (gpa-converter finalGrade))
+      (display (gpaConverter finalGrade))
       (newline)))
 
 ;Snippets section
@@ -178,51 +178,51 @@
       (display "Enter your choice (1-9): ")
       (set! choice (read))
       (case choice
-            ((1) (perform-operations))
-            ((2) (perform-function))
+            ((1) (performPrimitiveOperations))
+            ((2) (performFunction))
             ((3) (conditionals))
             ((4) (loop))
             ((5) (casedemo))
-            ((6) (pairs-and-lists))
-            ((7) (say-hello))
-            ((8) (input-sample-calc))
-            ((9) (input-sample-file))
+            ((6) (pairsAndLists))
+            ((7) (sayHello))
+            ((8) (inputSampleCalc))
+            ((9) (inputSampleFile))
             ((10) (display "Shutting Down") (exit))
             (else (display "Invalid choice. Please try again.\n")
             (start)))))
 
-(define (perform-operations)
+(define (performPrimitiveOperations)
       (display "Input first number: ")
       (define operand1(read))
       (display "Input second number: ")
       (define operand2(read))
       ; Perform addition
-      (let ((add-result (+ operand1 operand2)))
+      (let ((addResult (+ operand1 operand2)))
       (display "Addition Result: ")
-      (display add-result)
+      (display addResult)
       (newline)
 
       ; Perform subtraction
-      (let ((sub-result (- operand1 operand2)))
+      (let ((subResult (- operand1 operand2)))
             (display "Subtraction Result: ")
-            (display sub-result)
+            (display subResult)
             (newline)
 
             ; Check if the result is greater than 0
-            (if (> add-result 0)
+            (if (> addResult 0)
             (display "Addition Result is Greater than 0.")
             (display "Addition Result is Not Greater than 0."))
             (newline)
 
             ; Type checking
             (display "Type of Addition Result: ")
-            (if (number? add-result)
+            (if (number? addResult)
             (display "Number")
             (display "Not a Number"))
             (newline))))
 
 
-(define (perform-function)
+(define (performFunction)
       (display "Please enter a number: ")
       (let ((input (read)))
             (increment input)))
@@ -324,53 +324,53 @@
       (display "The fruit from the chosen number is: ")
       (display result))
 
-(define (pairs-and-lists)
+(define (pairsAndLists)
   ; Variables to be used
-      (define first-pair '())
-      (define second-pair '())
-      (define third-pair '())
-      (define fourth-pair '())
-      (define first-list '())
-      (define second-list '())
+      (define firstPair '())
+      (define secondPair '())
+      (define thirdPair '())
+      (define fourthPair '())
+      (define firstList '())
+      (define secondList '())
 
   ; These are our sample pairs to better understand them
-      (set! first-pair (cons 1037 94))
-      (set! second-pair (cons "John" 88))
-      (set! third-pair (cons "John" "Paul"))
-      (set! fourth-pair (cons (cons 1 2) 3))
+      (set! firstPair (cons 1037 94))
+      (set! secondPair (cons "John" 88))
+      (set! thirdPair (cons "John" "Paul"))
+      (set! fourthPair (cons (cons 1 2) 3))
 
       (display "First pair: ")
-      (display first-pair)
+      (display firstPair)
       (newline)
 
       (display "Second pair: ")
-      (display second-pair)
+      (display secondPair)
       (newline)
 
       (display "Third pair: ")
-      (display third-pair)
+      (display thirdPair)
       (newline)
 
       (display "Fourth pair: ")
-      (display fourth-pair)
+      (display fourthPair)
       (newline)
 
   ; In this example, we are combining the pairs to make a list
   ; But we can also make a list of strings, integers, and more.
 
-      (set! first-list (list first-pair second-pair third-pair))
+      (set! firstList (list firstPair secondPair thirdPair))
       (display "First list: ")
-      (display first-list)
+      (display firstList)
       (newline)
 
-      (set! second-list (list second-pair third-pair fourth-pair))
+      (set! secondList (list secondPair thirdPair fourthPair))
       (display "Second list: ")
-      (display second-list)
+      (display secondList)
       (newline))
 
 ;INPUT USING READ-LINE
 
-(define (say-hello)
+(define (sayHello)
       (display "Enter your name: ")
       (flush-output)
       (let ((name (read)))
@@ -381,7 +381,7 @@
 
 
 ;;Input using read - addition calculator
-(define (input-sample-calc)
+(define (inputSampleCalc)
       (display "Enter 1st number : ")
       (define val1 (read))
 
@@ -403,7 +403,7 @@
 
 
 ;;File Reading with (read-line)
-(define (input-sample-file)
+(define (inputSampleFile)
       (if (file-exists? "C:\\Users\\PC\\Desktop\\txt\\HelloWorld.txt")
       (let ((input-file (open-input-file "C:\\Users\\PC\\Desktop\\txt\\HelloWorld.txt")))
             (let loop()
@@ -427,4 +427,3 @@
 ; (define (get-user-choice)
 ; (display "Enter your choice (1-3): ")
 ; (read))
-
